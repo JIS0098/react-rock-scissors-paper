@@ -24,7 +24,7 @@ function App() {
 const [userSelect,setUserSelect]=useState(null);
 const [computerChoice,serComputerChoice]=useState(null);
 const [result,setResult]=useState("...");
-
+//const [score,setScore]=useState(null);
 
 
 const play=(userChoice)=>{
@@ -32,10 +32,21 @@ const play=(userChoice)=>{
 const computerChoice =randomChoice(); 
   serComputerChoice(computerChoice);
   setResult(judgment(choice[userChoice],computerChoice));
+  //setScore(userCount(result));
 }
 
 
 
+/*const userCount =(uesrResult)=>{
+  let userScore = 0;
+  if(uesrResult==="WIN!"){
+    userScore=userScore+1;
+  }else if(uesrResult==="TIE" || uesrResult==="LOSE"){
+    userScore = userScore
+  };
+  console.log(userScore)
+  return userScore
+}*/
 
 const judgment =(user,computer)=>{
   if(user.name==computer.name){
