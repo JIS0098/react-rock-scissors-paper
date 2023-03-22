@@ -3,7 +3,7 @@ import "./component.css";
 import ComputerBox from "./component/ComputerBox";
 import UserBox from "./component/UserBox";
 import { useState } from "react";
-
+ 
 
 const choice = {
   rock:{
