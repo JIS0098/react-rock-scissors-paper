@@ -5,6 +5,10 @@ import UserBox from "./component/UserBox";
 import { useState } from "react";
  
 
+//브금,눌렀을때 효과음 추가
+//점수기록 마무리
+//3점되면 유저승리 창 만들기 
+
 const choice = {
   rock:{
     name:"rock",
