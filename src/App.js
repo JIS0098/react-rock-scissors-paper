@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
  
 const item = [
 {
@@ -33,7 +33,9 @@ let [computer,setComputer]=useState(
     count:0
   }
 );
+let [result,setResult]=useState(false)
 let random =Math.floor(Math.random()*item.length)
+
 
 function reset(){
   let copy ={...user}
@@ -43,6 +45,7 @@ function reset(){
   copy.count=0
   setUser(copy)
   setComputer(copy)
+  setResult(false)
 }
 
 function play(a){
@@ -81,14 +84,15 @@ function play(a){
       }
     }
     setUser(copy)
-    if(user.count===5){
-      console.log("승")
-    }else if(computer.count===5){
-      console.log("패")
-    }
 }
 
-
+useEffect(()=>{
+  if(user.count===5){
+    setResult(true)
+  }else if(computer.count===5){
+    setResult(true)
+  }
+},[user,computer])
   return (
     <div className="main">
       <div className="title">
@@ -96,14 +100,26 @@ function play(a){
       <p>플레이어가 먼저 5점을 내면 승리합니다</p>
       </div>
       
-      <div className="game">
+      <div className='game'>
+      {
+        result===true && user.count===5?
+        <div className="game-modal">
+          <h1>Player Win!</h1>
+          <div onClick={()=>reset()}>Replay</div>
+        </div>
+        :result===true && computer.count===5?
+        <div className="game-modal">
+        <h1>Computer Win!</h1>
+        <div onClick={()=>reset()}>Replay</div>
+      </div>:""
+      }
         <div className="game-header">
         <h2 className="game-score"> {user.count} : {computer.count}</h2>
         <button onClick={()=>reset()}>reset</button>
         </div>
         <div className="game-screen">
         <div className='user-box'>
-          <h2>you</h2>
+          <h2>player</h2>
           <Card select={user}/>
         </div>
           <div className="game-screen-line"></div>
