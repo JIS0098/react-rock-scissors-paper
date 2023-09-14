@@ -64,3 +64,28 @@
     font-weight: 600;
     margin-top: 5px;
 }
+
+
+.item-img{
+    width: 100px;
+    filter: invert(56%) sepia(50%) saturate(2533%) hue-rotate(314deg) brightness(114%) contrast(88%);
+    margin-top: -6px;
+    transform: rotate(90deg);
+}    
+
+.user-box,
+.computer-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-box h2,
+.computer-box h2{
+    font-weight:600;
+}
+
+.user-box div,
+.computer-box div{
+    margin-top: 9px;
+}
