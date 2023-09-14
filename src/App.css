@@ -2,42 +2,77 @@
 .main{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+}
+.title{
+    padding-top: 110px;
 }
 
+.title >*{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.title H1 {
+    font-size:40px;
+}
 .game{
-    width: 450px;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 25px;
+    padding: 0 20px 0 20px;
+    width: 500px;
+    height: 480px;
     background-color: white;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+.game-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.game-header button{
+border: 2px solid lightgray;
+ width: 45px;
+height: 45px;
+border-radius: 10px;
+background-color: rgb(245, 244, 244);
+}
+
+.game-header button:hover{
+    background-color:lightgray ;
+    color: white;
+}
 
 .game-score{
-    font-size: 18px;
-    border-bottom: 1px solid lavender;
-    margin: 0 18px;
-    padding: 15px 0 5px 0;
+   font-size: 30px;
+   font-weight: 500;
+   margin: 10PX 0;
  }
 
 .game-screen{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid lavender;
+    border-top: 1px solid lavender;
 }
 .game-screen-line{
     width: 0.1px;
     height: 200px;
+  margin: 10px 0;
     background-color: lavender;
-    margin: 10px 50px;
 }
 
 .game-but{
     display: flex;
     justify-content: center;
-    border-top: 1px solid lavender;
-    padding-top: 10px;
-    margin: 0 18px; 
+    margin-top: 25px;
+
 }
 
 .game-but button{
@@ -47,10 +82,10 @@
     border: none;
     width: 50px;
     height: 50px;
-    margin: 7px 5px;
     transform: rotate(90deg);
     background-color:  #fdc8d4;
     border-radius: 10px;
+    margin: 0 5px;
 }
 
 .game-but button img {
@@ -59,10 +94,9 @@
 }
 
 .game-result{
-    font-size: 26.5px;
+    font-size:27px;
     text-align: center;
     font-weight: 600;
-    margin-top: 5px;
 }
 
 
@@ -85,7 +119,5 @@
     font-weight:600;
 }
 
-.user-box div,
-.computer-box div{
-    margin-top: 9px;
-}
+
+

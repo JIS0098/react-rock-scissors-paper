@@ -1,13 +1,7 @@
 
 import "./App.css";
-import "./component.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
  
-
-//브금,눌렀을때 효과음 추가
-//점수기록 마무리
-//3점되면 유저승리 창 만들기 
-
 const item = [
 {
     name:"rock",
@@ -26,20 +20,30 @@ const item = [
 function App() {
 let [user,setUser]=useState(
   {
-    name:'',
-    img:'',
+    name:"rock",
+    img:"./images/rock.png",
     count:0,
     result:"...",
   }
 );
 let [computer,setComputer]=useState(
   {
-    name:'',
-    img:'',
+    name:"rock",
+    img:"./images/rock.png",
     count:0
   }
 );
 let random =Math.floor(Math.random()*item.length)
+
+function reset(){
+  let copy ={...user}
+  copy.name='rock'
+  copy.img="./images/rock.png"
+  copy.result='...'
+  copy.count=0
+  setUser(copy)
+  setComputer(copy)
+}
 
 function play(a){
   let copy ={...user}
@@ -77,13 +81,26 @@ function play(a){
       }
     }
     setUser(copy)
+    if(user.count===5){
+      console.log("승")
+    }else if(computer.count===5){
+      console.log("패")
+    }
 }
 
 
   return (
     <div className="main">
+      <div className="title">
+      <h1>Rock Scissors Paper</h1>
+      <p>플레이어가 먼저 5점을 내면 승리합니다</p>
+      </div>
+      
       <div className="game">
-        <div className="game-score">{user.count}:{computer.count}</div>
+        <div className="game-header">
+        <h2 className="game-score"> {user.count} : {computer.count}</h2>
+        <button onClick={()=>reset()}>reset</button>
+        </div>
         <div className="game-screen">
         <div className='user-box'>
           <h2>you</h2>
