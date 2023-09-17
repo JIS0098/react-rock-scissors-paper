@@ -97,7 +97,7 @@ function App() {
     <div className="main">
       <div className="title">
         <h1>Rock Scissors Paper</h1>
-        <p>플레이어가 먼저 5점을 내면 승리합니다</p>
+        <p>먼저 5점을 내면 승리합니다</p>
       </div>
 
       <div className='game'>
