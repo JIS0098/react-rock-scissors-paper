@@ -110,12 +110,12 @@ function App() {
             : result === true && computer.count === 5 ?
               <div className="game-modal">
                 <h1>Computer Win!</h1>
-                <div onClick={() => reset()}>Replay</div>
+                <div className="pointer" onClick={() => reset()}>Replay</div>
               </div> : ""
         }
         <div className="game-header">
           <h2 className="game-score"> {user.count} : {computer.count}</h2>
-          <button onClick={() => reset()}>reset</button>
+          <button className="pointer" onClick={() => reset()}>reset</button>
         </div>
         <div className="game-screen">
           <div className='user-box'>
@@ -129,9 +129,9 @@ function App() {
           </div>
         </div>
         <div className="game-but">
-          <button onClick={() => play(0)}><img src="./images/rock icon.png" /></button>
-          <button onClick={() => play(1)}><img src="./images/scissors icon.png" /></button>
-          <button onClick={() => play(2)}><img src="./images/paper icon.png" /></button>
+          <button className="pointer" onClick={() => play(0)}><img src="./images/rock icon.png" /></button>
+          <button className="pointer" onClick={() => play(1)}><img src="./images/scissors icon.png" /></button>
+          <button className="pointer" onClick={() => play(2)}><img src="./images/paper icon.png" /></button>
         </div>
         <h2 className="game-result">{user.result}</h2>
       </div>
